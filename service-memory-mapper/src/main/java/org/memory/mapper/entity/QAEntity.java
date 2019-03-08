@@ -3,20 +3,22 @@ package org.memory.mapper.entity;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.List;
+
 @Document
 public class QAEntity {
     @Id
     private String id;
-    private User user;
+    private List<User> userList;
     private String question;
     private String answer;
 
-    public User getUser() {
-        return user;
+    public List<User> getUserList() {
+        return userList;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUserList(List<User> userList) {
+        this.userList = userList;
     }
 
     public String getId() {

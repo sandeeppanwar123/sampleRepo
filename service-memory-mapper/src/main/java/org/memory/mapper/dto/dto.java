@@ -2,12 +2,14 @@ package org.memory.mapper.dto;
 
 import org.memory.mapper.entity.User;
 
+import java.util.List;
+
 public class dto {
     public static class QADTO {
         private String id;
         private String question;
         private String answer;
-        private User user;
+        private List<User> userList;
 
         public String getId() {
             return id;
@@ -33,12 +35,12 @@ public class dto {
             this.answer = answer;
         }
 
-        public User getUser() {
-            return user;
+        public List<User> getUserList() {
+            return userList;
         }
 
-        public void setUser(User user) {
-            this.user = user;
+        public void setUserList(List<User> userList) {
+            this.userList = userList;
         }
     }
 }

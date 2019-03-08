@@ -1,5 +1,6 @@
 package org.memory.mapper.resources;
 
+import org.memory.mapper.dto.RememberDTO;
 import org.memory.mapper.dto.dto;
 import org.memory.mapper.entity.QAEntity;
 import org.memory.mapper.service.QAService;
@@ -24,6 +25,14 @@ public class smartResources {
     @PutMapping
     public Mono<QAEntity> addQuestion(@RequestBody(required = false) dto.QADTO qaDTO) {
         return qaService.createQA(qaDTO);
+
+
+    }
+
+
+    @PostMapping("/{remember}")
+    public Mono<QAEntity> increaseRememberCount(@RequestBody(required = false) RememberDTO rememberDTO) {
+        return qaService.rememberQA(rememberDTO);
 
 
     }
