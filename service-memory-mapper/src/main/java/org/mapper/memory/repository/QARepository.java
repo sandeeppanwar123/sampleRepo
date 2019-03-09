@@ -1,6 +1,6 @@
-package org.memory.mapper.repository;
+package org.mapper.memory.repository;
 
-import org.memory.mapper.entity.QAEntity;
+import org.mapper.memory.entity.QAEntity;
 import org.springframework.data.repository.reactive.ReactiveCrudRepository;
 
 public interface QARepository extends ReactiveCrudRepository<QAEntity, String> {

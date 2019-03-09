@@ -1,4 +1,4 @@
-package org.memory.mapper;
+package org.mapper.memory;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

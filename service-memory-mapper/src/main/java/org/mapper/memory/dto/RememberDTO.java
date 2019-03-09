@@ -1,4 +1,4 @@
-package org.memory.mapper.dto;
+package org.mapper.memory.dto;
 
 public class RememberDTO {
     private String userId;

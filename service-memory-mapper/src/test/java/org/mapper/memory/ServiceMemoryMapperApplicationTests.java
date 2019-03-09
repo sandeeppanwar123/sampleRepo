@@ -1,4 +1,4 @@
-package org.memory.mapper;
+package org.mapper.memory;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
