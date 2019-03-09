@@ -6,17 +6,18 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document
 public class QAEntity {
     @Id
-    private String qId;
-    private String question;
-    private String answer;
+    private Long qId;
 
-    public String getqId() {
+    public Long getqId() {
         return qId;
     }
 
-    public void setqId(String qId) {
+    public void setqId(Long qId) {
         this.qId = qId;
     }
+
+    private String question;
+    private String answer;
 
     public String getQuestion() {
         return question;

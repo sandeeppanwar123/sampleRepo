@@ -1,11 +1,10 @@
 package org.mapper.memory.entity;
 
-import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document
 public class User {
-    @Id
+
     private String userId;
     private String email;
     private String password;

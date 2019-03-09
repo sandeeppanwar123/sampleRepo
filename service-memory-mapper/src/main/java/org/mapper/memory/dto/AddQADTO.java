@@ -3,6 +3,15 @@ package org.mapper.memory.dto;
 public class AddQADTO {
     private String question;
     private String answer;
+    private Long qId;
+
+    public Long getqId() {
+        return qId;
+    }
+
+    public void setqId(Long qId) {
+        this.qId = qId;
+    }
 
     public String getQuestion() {
         return question;

@@ -3,8 +3,6 @@ package org.mapper.memory.mapper;
 import org.mapper.memory.dto.AddQADTO;
 import org.mapper.memory.entity.QAEntity;
 
-import java.util.UUID;
-
 public final class QADTOMapper {
     private QADTOMapper() {
     }
@@ -13,11 +11,8 @@ public final class QADTOMapper {
         QAEntity qaEntity = new QAEntity();
         qaEntity.setQuestion(addQADTO.getQuestion());
         qaEntity.setAnswer(addQADTO.getAnswer());
-        qaEntity.setqId(generateQuestionId());
+        qaEntity.setqId(addQADTO.getqId());
         return qaEntity;
     }
 
-    private static String generateQuestionId() {
-        return UUID.randomUUID().toString().replace("-", "");
-    }
 }

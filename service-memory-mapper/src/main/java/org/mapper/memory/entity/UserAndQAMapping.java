@@ -1,12 +1,14 @@
 package org.mapper.memory.entity;
 
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document
 public class UserAndQAMapping {
 
     private String userId;
-    private String qId;
+    @Id
+    private Long qId;
     private int count;
 
     public String getUserId() {
@@ -18,11 +20,11 @@ public class UserAndQAMapping {
     }
 
 
-    public String getqId() {
+    public Long getqId() {
         return qId;
     }
 
-    public void setqId(String qId) {
+    public void setqId(Long qId) {
         this.qId = qId;
     }
 

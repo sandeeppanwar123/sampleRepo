@@ -1,12 +1,11 @@
 package org.mapper.memory.resources;
 
 import org.mapper.memory.dto.AddQADTO;
+import org.mapper.memory.dto.MappingDTO;
 import org.mapper.memory.entity.QAEntity;
+import org.mapper.memory.entity.UserAndQAMapping;
 import org.mapper.memory.service.QAService;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Mono;
 
 @RestController
@@ -18,11 +17,11 @@ public class QAResources {
     public QAResources(QAService qaService) {
         this.qaService = qaService;
     }
-//
-//    @GetMapping("/{id}")
-//    private Mono<QAEntity> getQAById(@PathVariable String id) {
-//        return qaService.findQAById(id);
-//    }
+
+    @GetMapping("/{random}")
+    private Mono<QAEntity> getQARandomly() {
+        return qaService.getQARandomly();
+    }
 
     @PutMapping
     public Mono<QAEntity> addQuestion(@RequestBody AddQADTO addQADTO) {
@@ -31,13 +30,10 @@ public class QAResources {
 
     }
 
-//
-//    @PostMapping("/{remember}")
-//    public Mono<QAEntity> increaseRememberCount(@RequestBody(required = false) RememberDTO rememberDTO) {
-//        return qaService.rememberQA(rememberDTO);
-//
-//
-//    }
+    @PostMapping("/{remember}")
+    public UserAndQAMapping remember(@RequestBody MappingDTO mappingDTO) {
+        return qaService.updateMapping(Long.parseUnsignedLong(mappingDTO.getqId()));
+    }
 
 
 }
